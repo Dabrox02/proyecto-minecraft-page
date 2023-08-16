@@ -4,5 +4,37 @@
     box-sizing: border-box;
 }
 
-body {
+html{
+    font-size: 20px;
+}
+
+body{
+    cursor: url(img/cursor-default.svg), auto;
+    background-image: url(img/quartz-texture.svg);
+}
+
+p{
+    margin: 50px;
+    cursor: url(img/cursor-select.svg), auto;
+}
+
+::selection{
+    background-color: #000c13;
+    color: #fff;
+}
+
+
+
+.header{
+    /* background-color: aquamarine; */
+    width: 100vw;
+    max-width: 100vw;
+    padding: 1rem;
+    position: fixed; 
+}
+
+.header-container-logo{
+    width: 300px;
+    /* background-color: blue; */
+    margin: auto;
 }
