@@ -18,18 +18,18 @@
 }
 
 html {
+    height: 100vh;
     font-size: 10px;
     scroll-behavior: smooth;
 }
 
 body {
-    cursor: url(assets/img/pickaxe.png), auto;
+    height: 100vh;
+    cursor: url(assets/img/cursor-default.png), default;
     background-image: url(assets/img/quartz-texture.svg);
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    overflow-x: hidden;
 }
 
 li{
@@ -42,69 +42,85 @@ li{
 }
 
 /* HEADER */
-
 .header {
     width: 100vw;
-    min-width: 100vw;
-    height: 14rem;
-    padding: 1rem 0px;
+    height: 100vh;
     background-color: rgb(33, 33, 33);
-    background-image: url('assets/img/obsidian.png');
+    display: flex;
+    flex-direction: column;
 }
 
 .header-container-logo {
-    width: 35rem;
+    width: 100%;
+    height: 50%;
     margin: auto;
-    margin-bottom: 1rem;
-    /* background-color: blue; */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
 .header-logo {
+    max-width: 60rem;
     min-width: 25rem;
+    padding: 2rem;
 }
 
-.header-container-phrase {
+.header-container-start {
+    width: 100%;
+    height: 50%;
     display: flex;
-    justify-content: center;
-    /* background-color: yellow; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 1rem;
+}
+
+.header-container-phrase{
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .header-phrase {
-    width: 25rem;
     font-family: var(--font-minecraft);
     text-align: center;
     line-height: 1.9rem;
     color: #ececef;
-    /* background-color: brown; */
 }
 
 
 /* MAIN  */
+.main{
 
-.nav{
-    /* background-color: aqua; */
+}
+
+.section-content{
+    width: 100vw;
+    height: 100vh;
+}
+
+.section-content__index{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-content{
+    width: inherit;
+    background-color: blue;
+    display: grid;
 }
 
 .index{
-    display: flex;
+
 }
 
-.main{
-    padding: 3rem 10rem;
-    /* position: absolute; */
-    /* top: 14rem; */
-    /* max-height: 100vh; */
-}
-
-.main-content{
-    /* background-color: aqua; */
-}
 
 /* FOOTER */
 
 .footer{
-    position: sticky;
-    bottom: 0;
+    font-size: 10px;
+    font-family: var(--font-minecraft);
+    line-height: 1.9rem;
     color: white;
     margin-top: auto;
     background-color: rgb(33, 33, 33);
@@ -117,17 +133,32 @@ li{
 }
 
 /* BUTTONS */
-.btn-minecraft__grass{
+.btn-minecraft{
     display: inline-block;
     font-family: var(--font-minecraft);
     color: #fff;
     text-decoration: none;
     text-align: center;
+    padding: 0.5rem 2rem;
+}
+
+.btn-minecraft:hover, .btn-minecraft:active, .btn-minecraft:focus{
+    cursor: url(assets/img/cursor-pointer.png), default;
+}
+
+.btn-minecraft:active{
+    cursor: default;
+}
+
+.btn-minecraft__grass{
     border:  3px outset #4caf50;
-    padding: 1rem;
     background-color: #4caf50;
 }
 
 .btn-minecraft__grass:hover{
     border:  3px inset #4caf50;
+}
+
+.btn-minecraft__grass:active{
+    cursor: pointer;
 }
