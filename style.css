@@ -56,6 +56,10 @@ li{
     width: 35rem;
     margin: auto;
     margin-bottom: 1rem;
+.header-container-logo {
+    width: 35rem;
+    margin: auto;
+    margin-bottom: 1rem;
     /* background-color: blue; */
 }
 
