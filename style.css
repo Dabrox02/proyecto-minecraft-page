@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 @font-face {
     font-family: minecraft-font;
     font-style: normal;
@@ -5,8 +8,17 @@
     src: url(assets/fonts/Minecraft.ttf);
 }
 
+@font-face {
+    font-family: minecraft-font-bold;
+    font-style: normal;
+    font-weight: bold;
+    src: url(assets/fonts/BigApple.ttf);
+}
+
 :root {
     --font-minecraft: minecraft-font, 'Courier New', Courier, monospace;
+    --font-minecraft-bold: minecraft-font-bold, 'Courier New', Courier, monospace;
+    --min-w-device: 32rem;
 }
 
 /* GENERAL */
@@ -18,21 +30,20 @@
 }
 
 html {
-    height: 100vh;
+    min-width: var(--min-w-device);
     font-size: 10px;
     scroll-behavior: smooth;
-}
-
-body {
-    height: 100vh;
-    cursor: url(assets/img/cursor-default.png), default;
-    background-image: url(assets/img/quartz-texture.svg);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5rem;
     overflow-x: hidden;
 }
 
-li{
+body {
+    min-width: inherit;
+    background-image: url(assets/img/quartz-texture.svg);
+    font-family: var(--font-minecraft);
+    font-size: 1.5rem;
+}
+
+li {
     list-style: none;
 }
 
@@ -42,7 +53,9 @@ li{
 }
 
 /* HEADER */
+
 .header {
+    min-width: var(--min-w-device);
     width: 100vw;
     height: 100vh;
     background-color: rgb(33, 33, 33);
@@ -54,31 +67,31 @@ li{
     width: 100%;
     height: 50%;
     margin: auto;
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: end;
 }
 
 .header-logo {
+    min-width: var(--min-w-device);
     max-width: 60rem;
-    min-width: 25rem;
     padding: 2rem;
 }
 
 .header-container-start {
+    min-width: var(--min-w-device);
     width: 100%;
     height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    row-gap: 1rem;
+    row-gap: 3rem;
+    margin-top: 1rem;
 }
 
-.header-container-phrase{
-    width: 100%;
-    margin-top: 1rem;
+.header-container-phrase {
+    max-width: var(--min-w-device);
 }
 
 .header-phrase {
@@ -88,77 +101,400 @@ li{
     color: #ececef;
 }
 
+.header-container-btn-start {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* MAIN  */
-.main{
 
+.main {
+    min-width: var(--min-w-device);
+    width: 100%;
 }
 
-.section-content{
+.section-content {
     width: 100vw;
-    height: 100vh;
+    min-width: var(--min-w-device);
 }
 
-.section-content__index{
+.section-content__index {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    background-image: url(assets/img/fondo-index3.png);
+    background-size: cover; 
+    background-position: 50% 0%;
+    position: relative;
+}
+
+.section-content__index::before{
+    content: "";
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, #02002400 0%, #000000 60%);
+    opacity: 0.6;
+}
+
+
+.container-title-section {
+    width: 100%;
+    color: #ebebeb;
+    padding: 0px 2rem;
+    text-align: center;
+    margin: 1.5rem auto;
+    position: relative;
+}
+
+.title-section {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    max-width: 50rem;
+    font-family: var(--font-minecraft-bold);
+    letter-spacing: 1rem;
+    background-color: #a88953;
+    background-image: url(assets/img/sign-texture.png);
+    border: 3px outset #897143;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.title-section__sm{
+    font-size: 8vw;
+}
+
+.title-section__md{
+    font-size: 14vw;
+}
+
+.title-section__lg{
+    font-size: 20vw;
+}
+
+.index-item {
+    margin: 1.5rem 0px;
+}
+
+.container-content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.container-p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #000000;
+    position: relative;
+}
+
+.p-content {
+    color: #ebebeb;
+    padding: 2rem;
+    font-size: 2rem;
+    text-align: justify;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 100;
+}
+
+
+/* SLIDERS - WHAT'S MINECRAFT*/
+
+.container-slider{
+    width: 100%;
+    height: 50rem;
+    min-height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.slider{
+    width: 90%;
+    height: 75%;
+    margin: auto;
+    background-image: url("assets/img/minecraft-whats-1.webp");
+    background-size: cover;
+    animation: slide-move 10s infinite ease;
+    background-position: 50% 0%;
+}
+
+/* ____________________________ */
+
+/* HISTORY */
+
+.media-scroller{
+    padding: 1rem;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: 2rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.media-element{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #212121;
+    text-align: center;
+}
+
+.media-element img{
+    width: 100%;
+    height: 80%;
+    border-radius: 1rem 1rem 0px 0px;
+    border-bottom: 2px solid #ffffff;
+}
+
+.title-media-element{
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.media-scroller::-webkit-scrollbar{
+    background-color: darkgray  ;
+    height: 0.5rem;
+}
+
+.media-scroller::-webkit-scrollbar-thumb{
+    background-color: black;
+}
+
+/* _____________________________ */
+
+
+/* GAME-MODES */
+
+.list-game-modes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.nav-content{
-    width: inherit;
-    background-color: blue;
-    display: grid;
+.container-game-mode{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    background-color: #c7bc75;
+    background-image: url(assets/img/sand-texture.svg);
 }
 
-.index{
-
+.container-game-mode h2{
+    column-rule: #000000;
+    padding-top:2rem;
 }
 
+.container-game-mode p{
+    padding: 1rem;
+    color: rgb(69, 66, 66);
+}
+
+
+/* _____________________________ */
 
 /* FOOTER */
 
-.footer{
+.footer {
     font-size: 10px;
     font-family: var(--font-minecraft);
     line-height: 1.9rem;
     color: white;
     margin-top: auto;
-    background-color: rgb(33, 33, 33);
-    background-image: url('assets/img/obsidian.png');
+    background-color: #212121;
+    /* background-image: url('assets/img/obsidian.png'); */
 }
 
-.footer-copyright{
+.footer-copyright {
     text-align: center;
     line-height: 3.5rem;
 }
 
+/* ___________________________ */
+
 /* BUTTONS */
-.btn-minecraft{
-    display: inline-block;
+.btn-minecraft {
+    display: block;
     font-family: var(--font-minecraft);
     color: #fff;
     text-decoration: none;
     text-align: center;
     padding: 0.5rem 2rem;
+    margin: auto;
 }
 
-.btn-minecraft:hover, .btn-minecraft:active, .btn-minecraft:focus{
-    cursor: url(assets/img/cursor-pointer.png), default;
+.btn-minecraft__sm {
+    width: 25%;
+    max-width: 30rem;
+    min-width: 25rem;
 }
 
-.btn-minecraft:active{
-    cursor: default;
+.btn-minecraft__md {
+    width: 50%;
+    max-width: 45rem;
+    min-width: 25rem;
 }
 
-.btn-minecraft__grass{
-    border:  3px outset #4caf50;
+.btn-minecraft__lg {
+    width: 80%;
+    max-width: 60rem;
+    min-width: 25rem;
+}
+
+.btn-minecraft__grass {
+    border: 3px outset #4caf50;
     background-color: #4caf50;
 }
 
-.btn-minecraft__grass:hover{
-    border:  3px inset #4caf50;
+.btn-minecraft__grass:hover {
+    border: 3px inset #4caf50;
 }
 
-.btn-minecraft__grass:active{
-    cursor: pointer;
+.btn-minecraft__stone {
+    outline: 2px solid #000c13;
+    border: 3px outset #aaaaaa;
+    background-color: #6f6f6f;
+}
+
+.btn-minecraft__stone:hover {
+    border: 3px inset #aaaaaa;
+}
+
+/* ____________________________ */
+
+/* TEXTURES */
+.bg-stone{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("assets/img/stone-texture.svg");
+    background-size: 100%;
+    opacity: 0.3;
+}
+
+.chain-texture{
+    width: 100%;
+    height: 36px;
+    position: absolute;
+    left: 0;
+    top: 0.8vw;
+    background-image: url(assets/img/chain-texture.svg);
+    background-repeat: repeat-x;
+    background-size: 48px;
+}
+
+.logo-microsoft{
+    width: 100%;
+    background-image: url(assets/img/logo-microsoft.svg);
+}
+
+/* __________________________________ */
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 650px) {
+    .title-section {
+        font-size: 6rem;
+    }
+
+    .title-section-mw60{
+        max-width: 60rem;
+    }
+
+    .container-content__mx{
+        margin: 0px 3rem;
+    }
+
+    .border-1{
+        border-start-start-radius: 5rem;
+    }
+
+    .border-4{
+        border-end-end-radius: 5rem;
+    }
+
+    .media-scroller{
+        grid-auto-columns: 50%;
+    }
+
+    .list-game-modes{
+        flex-direction: row;
+    }
+
+    .container-game-mode{
+        width: 48%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .container-content{
+        flex-direction: row;
+    }
+
+    .container-img, .container-p, .container-slider, .container-img-creator{
+        width: 50%;
+    }
+    
+    .container-img img{
+        width: 100%;
+    }
+
+    .media-scroller{
+        grid-auto-columns: 33%;
+    }
+
+    .container-game-mode{
+        width: 23%;
+    }
+}
+
+
+/* _____________________________ */
+
+/* ANIMATIONS */
+
+@keyframes slide-move{
+    0%{
+        background-image: url(assets/img/minecraft-whats-1.webp);
+        background-size: cover;
+    }
+    50%{
+        background-image: url(assets/img/minecraft-whats-2.webp);
+        background-size: cover;
+    }
+    100%{
+        background-image: url(assets/img/minecraft-whats-3.jpg);
+        background-size: cover;
+    }
 }
