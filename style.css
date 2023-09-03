@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&display=swap');
 
 @font-face {
     font-family: minecraft-font;
@@ -43,6 +45,10 @@ body {
     font-size: 1.5rem;
 }
 
+ul{
+    padding: 0;
+}
+
 li {
     list-style: none;
 }
@@ -50,6 +56,18 @@ li {
 ::selection {
     background-color: #000c13;
     color: #fff;
+}
+
+/* HEART ABSOLUTE  */
+
+.heart-absolute{
+    display: none;
+    z-index: 999;
+    position: fixed;
+    bottom: 0px;
+    height: 64px;
+    width: 64px;
+    background-image: url(assets/img/minecraft-heart.png);
 }
 
 /* HEADER */
@@ -159,8 +177,8 @@ li {
     font-family: var(--font-minecraft-bold);
     letter-spacing: 1rem;
     background-color: #a88953;
-    background-image: url(assets/img/sign-texture.png);
     border: 3px outset #897143;
+    background-image: url(assets/img/sign-texture.png);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,6 +216,7 @@ li {
 .container-img img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .container-p{
@@ -212,10 +231,14 @@ li {
 .p-content {
     color: #ebebeb;
     padding: 2rem;
-    font-size: 2rem;
     text-align: justify;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 100;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.p-content span.bold{
+    font-weight: 900;
 }
 
 
@@ -308,6 +331,7 @@ li {
     justify-content: start;
     background-color: #c7bc75;
     background-image: url(assets/img/sand-texture.svg);
+    box-shadow: 0px 8px 5px 4px rgba(0,0,0,0.1);
 }
 
 .container-game-mode h2{
@@ -319,6 +343,24 @@ li {
     padding: 1rem;
     color: rgb(69, 66, 66);
 }
+/* _____________________________ */
+
+/* MINECRAFT CUSTOM */
+
+#carouselMinecraftMods{
+    box-shadow: 3px 8px 0px 4px rgba(0,0,0,0.1);
+}
+
+.carousel-caption h1{
+    margin: 1.5rem auto;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: #a88953;
+    border: 3px outset #897143;
+    max-width: 25rem;
+}
+
+
 
 
 /* _____________________________ */
@@ -344,13 +386,14 @@ li {
 
 /* BUTTONS */
 .btn-minecraft {
+    height: 4rem;
     display: block;
     font-family: var(--font-minecraft);
     color: #fff;
     text-decoration: none;
     text-align: center;
-    padding: 0.5rem 2rem;
     margin: auto;
+    line-height: 3;
 }
 
 .btn-minecraft__sm {
@@ -402,6 +445,13 @@ li {
     opacity: 0.3;
 }
 
+.bg-dirt{
+    background-size: 100%;
+    position: absolute;
+    background-image: url("assets/img/dirt-texture.png");
+    background-repeat: repeat;
+}
+
 .chain-texture{
     width: 100%;
     height: 36px;
@@ -432,7 +482,7 @@ li {
     }
 
     .container-content__mx{
-        margin: 0px 3rem;
+        margin: 0px 5vw;
     }
 
     .border-1{
@@ -457,12 +507,15 @@ li {
 }
 
 @media screen and (min-width: 1000px) {
+    .heart-absolute{
+        display: block;
+    }
 
     .container-content{
         flex-direction: row;
     }
 
-    .container-img, .container-p, .container-slider, .container-img-creator{
+    .container-img, .container-p, .container-slider{
         width: 50%;
     }
     
@@ -477,8 +530,12 @@ li {
     .container-game-mode{
         width: 23%;
     }
-}
 
+    #carouselMinecraftMods{
+        width: 50%;
+        height: 100%;
+    }
+}
 
 /* _____________________________ */
 
