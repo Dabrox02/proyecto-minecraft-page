@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400&display=swap');
 
@@ -64,6 +63,7 @@ li {
     display: none;
     z-index: 999;
     position: fixed;
+    left: 32px;
     bottom: 0px;
     height: 64px;
     width: 64px;
@@ -173,7 +173,7 @@ li {
     width: 100%;
     height: 100%;
     margin: 0px auto;
-    max-width: 50rem;
+    max-width: 60rem;
     font-family: var(--font-minecraft-bold);
     letter-spacing: 1rem;
     background-color: #a88953;
@@ -206,6 +206,7 @@ li {
     flex-direction: column;
     flex-wrap: wrap;
 }
+
 
 .container-img{
     display: flex;
@@ -312,8 +313,58 @@ li {
 
 /* _____________________________ */
 
+/* MINECRAFT PLAYER */
 
-/* GAME-MODES */
+.modes-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.singleplayer, .multiplayer{
+    width: 100%;
+}
+
+.singleplayer-img{
+    width: 100%;
+    height: 30vh;
+    max-height: 40vh;
+    background-image: url(assets/img/singleplayer-minecraft.png);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: 80%;
+}
+
+.multiplayer-img{
+    width: 100%;
+    height: 30vh;
+    max-height: 40vh;
+    background-image: url(assets/img/multiplayer-minecraft.png);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: 90%;
+}
+
+.card-info{
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #ffffff;
+    padding: 2rem;
+    margin: 2rem 0 2rem 0;
+    font-size: 2rem;
+    background-color: #6f6f6f;
+    box-shadow: 0px 13px 9px 4px rgba(0,0,0,0.2);
+}
+
+.card-info .title-card{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+
+/* _____________________________ */
+
+
+/* SINGLEPLAYER-MODES */
 
 .list-game-modes{
     width: 100%;
@@ -361,26 +412,43 @@ li {
 }
 
 
-
-
 /* _____________________________ */
+
+/* MINECRAFT OTHERS */
+
+.other-minecraft{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.list-tools{
+    width: 100%;
+}
+
+.list-tools a{
+    margin: 1rem auto;
+}
+
+
+
 
 /* FOOTER */
 
 .footer {
-    font-size: 10px;
-    font-family: var(--font-minecraft);
+    height: 7rem;
+    font-size: 1.5rem;
+    font-family: 'Nunito Sans', sans-serif;
     line-height: 1.9rem;
     color: white;
-    margin-top: auto;
+    margin-top: 2rem;
     background-color: #212121;
-    /* background-image: url('assets/img/obsidian.png'); */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer-copyright {
-    text-align: center;
-    line-height: 3.5rem;
-}
 
 /* ___________________________ */
 
@@ -445,12 +513,6 @@ li {
     opacity: 0.3;
 }
 
-.bg-dirt{
-    background-size: 100%;
-    position: absolute;
-    background-image: url("assets/img/dirt-texture.png");
-    background-repeat: repeat;
-}
 
 .chain-texture{
     width: 100%;
@@ -497,12 +559,21 @@ li {
         grid-auto-columns: 50%;
     }
 
+    .modes-container{
+        flex-direction: row;
+    } 
+
     .list-game-modes{
         flex-direction: row;
     }
 
     .container-game-mode{
         width: 48%;
+    }
+
+    
+    .footer {
+        font-size: 1.6rem;
     }
 }
 
@@ -527,6 +598,10 @@ li {
         grid-auto-columns: 33%;
     }
 
+    .singleplayer-img{
+        width: 80%;
+    }
+
     .container-game-mode{
         width: 23%;
     }
@@ -534,6 +609,19 @@ li {
     #carouselMinecraftMods{
         width: 50%;
         height: 100%;
+    }
+
+    .other-minecraft{
+        flex-direction: row;
+    }
+
+    .other-minecraft section{
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 1.8rem;
     }
 }
 
