@@ -34,3 +34,6 @@ Como Maquetacion Web, para estructurar los elementos de la pagina se hizo con el
 <p align="center">
     <img src="assets/maquetacion/ViewMobile.png" alt="Maquetacion Web Mobile" width="200px">
 </p>
+
+### Resultado Final
+- https://proyecto-minecraft-page.vercel.app/
