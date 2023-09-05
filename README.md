@@ -24,6 +24,12 @@ Como Maquetacion Web, para estructurar los elementos de la pagina se hizo con el
 
 - [Tipografia Minecraft](https://www.dafont.com/es/minecraftia.font)
 - [Assets Minecraft](https://www.dafont.com/es/minecraftia.font)
+
+### Tecnologias Utilizadas
+En este contexto, el proyecto se basa en la utilización de tres tecnologías fundamentales, permitiéndonos diseñar una interfaz atractiva y funcional, garantizando una navegación fluida y una presentación visualmente agradable. Las siguientes:
+- HTML (HyperText Markup Language)
+- CSS (Cascading Style Sheets)
+- Bootstrap
   
 #### Maquetación Vista Escritorio 
 <p align="center">
